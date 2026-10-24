@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAI S-CLASS - Galeria VIP da Maiara</title>
+
+  <!-- Fontes e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Topo do App -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <i class="fa-solid fa-crown text-gold"></i>
+        <span>MAI <span class="s-class">S-CLASS</span></span>
+      </div>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Pesquisar momentos fofos..." />
+      </div>
+
+      <button class="apk-download-btn" id="openApkModal">
+        <i class="fa-solid fa-heart"></i> MAI VIP
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu de Abas -->
+  <nav class="tabs-nav">
+    <div class="tabs-container">
+      <button class="tab-btn active" data-tab="todos">
+        <i class="fa-solid fa-border-all"></i> Todos os Vídeos
+      </button>
+      <button class="tab-btn" data-tab="lancamentos">
+        <i class="fa-solid fa-sparkles"></i> Últimos Lançados
+      </button>
+      <button class="tab-btn" data-tab="favoritos">
+        <i class="fa-solid fa-star"></i> Favoritos <span id="favCountBadge" class="badge">0</span>
+      </button>
+      <button class="tab-btn" data-tab="suporte">
+        <i class="fa-solid fa-headset"></i> Suporte & Mensagem
+      </button>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+
+    <!-- Filtro de Categorias -->
+    <div class="categories-bar" id="categoriesBar">
+      <button class="cat-chip active" data-category="all">Todas as Categorias</button>
+      <button class="cat-chip" data-category="Engraçados">Engraçados</button>
+      <button class="cat-chip" data-category="Viagens">Viagens</button>
+      <button class="cat-chip" data-category="Festas">Festas</button>
+      <button class="cat-chip" data-category="Família">Família</button>
+      <button class="cat-chip" data-category="Especiais">Especiais</button>
+    </div>
+
+    <!-- Título da Seção Ativa -->
+    <h2 class="section-title" id="sectionTitle">
+      <i class="fa-solid fa-heart text-gold"></i> Todos os Vídeos Fofos
+    </h2>
+
+    <!-- Grade de Vídeos -->
+    <div class="video-grid" id="videoGrid"></div>
+
+    <!-- Seção da Aba Suporte e Mensagem -->
+    <section class="suporte-section hidden" id="suporteSection">
+      <div class="suporte-grid">
+
+        <!-- Form de Mensagem/Suporte -->
+        <div class="card-suporte">
+          <h3><i class="fa-solid fa-paper-plane text-gold"></i> Enviar Mensagem ou Reportar Vídeo</h3>
+          <p>Teve algum problema para tocar um vídeo MP4 ou quer mandar um recado pra Maiara?</p>
+          <form id="supportForm" onsubmit="handleSupportSubmit(event)">
+            <div class="input-group">
+              <label for="supName">Seu Nome</label>
+              <input type="text" id="supName" required placeholder="Digite seu nome..." />
+            </div>
+            <div class="input-group">
+              <label for="supSubject">Assunto</label>
+              <select id="supSubject">
+                <option value="recado">Mandar Recado Fofo</option>
+                <option value="bug">Vídeo MP4 Não Carrega</option>
+                <option value="sugestao">Sugestão de Novo Vídeo</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="supMsg">Mensagem</label>
+              <textarea id="supMsg" rows="4" required placeholder="Escreva aqui..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+          </form>
+        </div>
+
+        <!-- FAQ e Informações -->
+        <div class="card-suporte">
+          <h3><i class="fa-solid fa-circle-question text-gold"></i> Dúvidas Frequentes (Suporte)</h3>
+
+          <div class="faq-item">
+            <h4><i class="fa-solid fa-chevron-right text-gold"></i> Como funcionam os vídeos em MP4?</h4>
+            <p>Os vídeos são carregados diretamente pelo navegador no player em alta definição com controles de áudio e tela cheia.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4><i class="fa-solid fa-chevron-right text-gold"></i> Como salvar nos Favoritos?</h4>
+            <p>Basta clicar no ícone de coração em qualquer vídeo para salvar na sua lista pessoal do navegador.</p>
+          </div>
+
+          <div class="community-box">
+            <h4><i class="fa-solid fa-crown text-gold"></i> MAI S-CLASS VIP</h4>
+            <p>Uma coleção exclusiva de vídeos dedicada a registrar os melhores momentos com a Maiara.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal / Player Pop-up de Vídeo (Suporta MP4 direto ou Iframe) -->
+  <div class="modal-overlay hidden" id="videoModal">
+    <div class="modal-card">
+      <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+
+      <div class="modal-video-wrapper">
+        <!-- Player de Vídeo MP4 Nativo -->
+        <video id="modalVideoPlayer" controls playsinline class="hidden">
+          <source id="modalVideoSource" src="" type="video/mp4" />
+          Seu navegador não suporta a exibição de vídeos MP4.
+        </video>
+
+        <!-- Iframe para Links Externos (ex: YouTube) como fallback -->
+        <iframe id="modalIframe" src="" allowfullscreen allow="autoplay" class="hidden"></iframe>
+      </div>
+
+      <div class="modal-info">
+        <div class="modal-header-info">
+          <div>
+            <h2 id="modalTitle">Título do Vídeo</h2>
+            <div class="modal-tags">
+              <span class="badge badge-gold" id="modalQuality">4K S-CLASS</span>
+              <span class="badge" id="modalCategory">Categoria</span>
+              <span class="badge badge-sub" id="modalYear">2026</span>
+            </div>
+          </div>
+          <button class="fav-action-btn" id="modalFavBtn">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+
+        <p id="modalDesc" class="modal-desc">Descrição do vídeo...</p>
+
+        <!-- Lista de Outros Vídeos Relacionados / Episódios -->
+        <div class="episodes-section" id="episodesSection">
+          <h4><i class="fa-solid fa-film text-gold"></i> Partes do Vídeo</h4>
+          <div class="episodes-grid" id="episodesGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Informações/APK -->
+  <div class="modal-overlay hidden" id="apkModal">
+    <div class="modal-card apk-modal-card">
+      <button class="close-modal-btn" id="closeApkModalBtn">&times;</button>
+      <div class="apk-content">
+        <i class="fa-solid fa-crown apk-icon text-gold"></i>
+        <h2>MAI S-CLASS VIP</h2>
+        <p>Sua galeria exclusiva de vídeos fofos e momentos inesquecíveis com a Maiara.</p>
+        <ul class="apk-features">
+          <li><i class="fa-solid fa-check text-gold"></i> Suporte total a vídeos MP4</li>
+          <li><i class="fa-solid fa-check text-gold"></i> Salve seus vídeos favoritos</li>
+          <li><i class="fa-solid fa-check text-gold"></i> Qualidade S-Class sem travamentos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+                </html>
+                
