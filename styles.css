@@ -604,4 +604,75 @@ body {
     gap: 12px;
   }
   }
+/* Banner Especial SKZ */
+.skz-banner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  box-shadow: 0 0 20px rgba(245, 197, 24, 0.15);
+}
+
+.skz-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.skz-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0.4) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.skz-banner-text {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+  max-width: 80%;
+}
+
+.skz-tag {
+  background: #e50914;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.skz-banner-text h1 {
+  font-family: var(--font-brand);
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.skz-banner-text p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .skz-banner {
+    height: 160px;
+  }
+  .skz-banner-text h1 {
+    font-size: 1.2rem;
+  }
+  .skz-banner-text p {
+    font-size: 0.75rem;
+  }
+}
+
   
