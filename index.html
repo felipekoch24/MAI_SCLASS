@@ -101,6 +101,14 @@
             </div>
             <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
           </form>
+
+          <!-- Botão direto para o Telegram -->
+          <div style="margin-top: 20px; text-align: center;">
+            <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted);">Ou se preferir, fale direto no Telegram:</p>
+            <a href="https://t.me/+5551995830380" target="_blank" class="submit-btn" style="background: #229ed9; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <i class="fa-brands fa-telegram"></i> Chamar no Telegram
+            </a>
+          </div>
         </div>
 
         <!-- FAQ e Informações -->
@@ -128,7 +136,7 @@
 
   </main>
 
-  <!-- Modal / Player Pop-up de Vídeo (Suporta MP4 direto ou Iframe) -->
+  <!-- Modal / Player Pop-up de Vídeo -->
   <div class="modal-overlay hidden" id="videoModal">
     <div class="modal-card">
       <button class="close-modal-btn" id="closeModalBtn">&times;</button>
@@ -140,7 +148,7 @@
           Seu navegador não suporta a exibição de vídeos MP4.
         </video>
 
-        <!-- Iframe para Links Externos (ex: YouTube) como fallback -->
+        <!-- Iframe para Links Externos como fallback -->
         <iframe id="modalIframe" src="" allowfullscreen allow="autoplay" class="hidden"></iframe>
       </div>
 
@@ -161,7 +169,7 @@
 
         <p id="modalDesc" class="modal-desc">Descrição do vídeo...</p>
 
-        <!-- Lista de Outros Vídeos Relacionados / Episódios -->
+        <!-- Lista de Outros Vídeos Relacionados -->
         <div class="episodes-section" id="episodesSection">
           <h4><i class="fa-solid fa-film text-gold"></i> Partes do Vídeo</h4>
           <div class="episodes-grid" id="episodesGrid"></div>
@@ -189,5 +197,5 @@
 
   <script src="app.js"></script>
 </body>
-                </html>
-                
+            </html>
+            
