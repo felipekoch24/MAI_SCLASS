@@ -112,7 +112,7 @@
 
           <div class="faq-item">
             <h4><i class="fa-solid fa-chevron-right text-gold"></i> Como funcionam os vídeos em MP4?</h4>
-            <p>Os vídeos rodam direto no player em alta definição com loop infinito até você escolher outro.</p>
+            <p>Os vídeos rodam direto no player em alta definição, sem travamentos e em loop infinito.</p>
           </div>
 
           <div class="faq-item">
@@ -131,14 +131,14 @@
 
   </main>
 
-  <!-- Modal / Player Pop-up de Vídeo (Com loop infinito) -->
+  <!-- Modal / Player Pop-up de Vídeo (Otimizado: sem som automático e sem carregar pesado) -->
   <div class="modal-overlay hidden" id="videoModal">
     <div class="modal-card">
       <button class="close-modal-btn" id="closeModalBtn">&times;</button>
 
       <div class="modal-video-wrapper">
-        <!-- Player de Vídeo MP4 Nativo com loop -->
-        <video id="modalVideoPlayer" controls playsinline loop class="hidden">
+        <!-- Player MP4 Otimizado: loop, mudo inicial e preload de metadados -->
+        <video id="modalVideoPlayer" controls playsinline loop muted preload="metadata" class="hidden">
           <source id="modalVideoSource" src="" type="video/mp4" />
           Seu navegador não suporta a exibição de vídeos MP4.
         </video>
@@ -182,7 +182,7 @@
         <h2>MAI S-CLASS VIP</h2>
         <p>Sua galeria exclusiva de vídeos fofos e momentos inesquecíveis com a Maiara.</p>
         <ul class="apk-features">
-          <li><i class="fa-solid fa-check text-gold"></i> Suporte a MP4 em Loop Infinito</li>
+          <li><i class="fa-solid fa-check text-gold"></i> Carregamento leve e sem ruído</li>
           <li><i class="fa-solid fa-check text-gold"></i> Salve seus vídeos favoritos</li>
           <li><i class="fa-solid fa-check text-gold"></i> Qualidade S-Class sem travamentos</li>
         </ul>
