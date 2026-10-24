@@ -47,7 +47,7 @@
         <i class="fa-solid fa-star"></i> Favoritos <span id="favCountBadge" class="badge">0</span>
       </button>
       <button class="tab-btn" data-tab="suporte">
-        <i class="fa-solid fa-headset"></i> Suporte & Mensagem
+        <i class="fa-solid fa-comments"></i> Contato & Suporte
       </button>
     </div>
   </nav>
@@ -84,56 +84,40 @@
     <!-- Grade de Vídeos -->
     <div class="video-grid" id="videoGrid"></div>
 
-    <!-- Seção da Aba Suporte e Mensagem -->
+    <!-- Seção de Contato Direto -->
     <section class="suporte-section hidden" id="suporteSection">
       <div class="suporte-grid">
 
-        <!-- Form de Mensagem/Suporte -->
-        <div class="card-suporte">
-          <h3><i class="fa-solid fa-paper-plane text-gold"></i> Enviar Mensagem ou Reportar Vídeo</h3>
-          <p>Teve algum problema para tocar um vídeo MP4 ou quer mandar um recado pra Maiara?</p>
-          <form id="supportForm" onsubmit="handleSupportSubmit(event)">
-            <div class="input-group">
-              <label for="supName">Seu Nome</label>
-              <input type="text" id="supName" required placeholder="Digite seu nome..." />
-            </div>
-            <div class="input-group">
-              <label for="supSubject">Assunto</label>
-              <select id="supSubject">
-                <option value="recado">Mandar Recado Fofo</option>
-                <option value="bug">Vídeo MP4 Não Carrega</option>
-                <option value="sugestao">Sugestão de Novo Vídeo</option>
-                <option value="outros">Outros</option>
-              </select>
-            </div>
-            <div class="input-group">
-              <label for="supMsg">Mensagem</label>
-              <textarea id="supMsg" rows="4" required placeholder="Escreva aqui..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
-          </form>
+        <!-- Card de Redes/Contato Direto -->
+        <div class="card-suporte" style="text-align: center;">
+          <h3><i class="fa-solid fa-paper-plane text-gold"></i> Falar Conosco</h3>
+          <p style="margin-bottom: 25px;">Teve algum problema com os vídeos ou quer mandar um recado especial? Escolha por onde prefere chamar:</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 0 auto;">
+            <!-- Botão Telegram -->
+            <a href="https://t.me/+5551995830380" target="_blank" class="submit-btn" style="background: #229ed9; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1rem; padding: 12px 20px;">
+              <i class="fa-brands fa-telegram" style="font-size: 1.3rem;"></i> Chamar no Telegram
+            </a>
 
-          <!-- Botão direto para o Telegram -->
-          <div style="margin-top: 20px; text-align: center;">
-            <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted);">Ou se preferir, fale direto no Telegram:</p>
-            <a href="https://t.me/+5551995830380" target="_blank" class="submit-btn" style="background: #229ed9; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
-              <i class="fa-brands fa-telegram"></i> Chamar no Telegram
+            <!-- Botão WhatsApp -->
+            <a href="https://wa.me/5551995830380" target="_blank" class="submit-btn" style="background: #25d366; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1rem; padding: 12px 20px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Chamar no WhatsApp
             </a>
           </div>
         </div>
 
         <!-- FAQ e Informações -->
         <div class="card-suporte">
-          <h3><i class="fa-solid fa-circle-question text-gold"></i> Dúvidas Frequentes (Suporte)</h3>
+          <h3><i class="fa-solid fa-circle-question text-gold"></i> Dúvidas Frequentes</h3>
 
           <div class="faq-item">
             <h4><i class="fa-solid fa-chevron-right text-gold"></i> Como funcionam os vídeos em MP4?</h4>
-            <p>Os vídeos são carregados diretamente pelo navegador no player em alta definição com controles de áudio e tela cheia.</p>
+            <p>Os vídeos rodam direto no player em alta definição com loop infinito até você escolher outro.</p>
           </div>
 
           <div class="faq-item">
             <h4><i class="fa-solid fa-chevron-right text-gold"></i> Como salvar nos Favoritos?</h4>
-            <p>Basta clicar no ícone de coração em qualquer vídeo para salvar na sua lista pessoal do navegador.</p>
+            <p>Basta clicar no ícone de coração em qualquer vídeo para salvar na sua lista pessoal.</p>
           </div>
 
           <div class="community-box">
@@ -147,14 +131,14 @@
 
   </main>
 
-  <!-- Modal / Player Pop-up de Vídeo -->
+  <!-- Modal / Player Pop-up de Vídeo (Com loop infinito) -->
   <div class="modal-overlay hidden" id="videoModal">
     <div class="modal-card">
       <button class="close-modal-btn" id="closeModalBtn">&times;</button>
 
       <div class="modal-video-wrapper">
-        <!-- Player de Vídeo MP4 Nativo -->
-        <video id="modalVideoPlayer" controls playsinline class="hidden">
+        <!-- Player de Vídeo MP4 Nativo com loop -->
+        <video id="modalVideoPlayer" controls playsinline loop class="hidden">
           <source id="modalVideoSource" src="" type="video/mp4" />
           Seu navegador não suporta a exibição de vídeos MP4.
         </video>
@@ -198,7 +182,7 @@
         <h2>MAI S-CLASS VIP</h2>
         <p>Sua galeria exclusiva de vídeos fofos e momentos inesquecíveis com a Maiara.</p>
         <ul class="apk-features">
-          <li><i class="fa-solid fa-check text-gold"></i> Suporte total a vídeos MP4</li>
+          <li><i class="fa-solid fa-check text-gold"></i> Suporte a MP4 em Loop Infinito</li>
           <li><i class="fa-solid fa-check text-gold"></i> Salve seus vídeos favoritos</li>
           <li><i class="fa-solid fa-check text-gold"></i> Qualidade S-Class sem travamentos</li>
         </ul>
