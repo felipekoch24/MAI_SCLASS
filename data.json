@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Nossa Viagem",
+    "category": "Viagens",
+    "year": "2026",
+    "quality": "FOFO",
+    "rating": "10",
+    "isRelease": true,
+    "thumbnail": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&q=80",
+    "videoUrl": "video1.mp4",
+    "description": "Dia muito divertido com a Maiara na viagem."
+  },
+  {
+    "id": 2,
+    "title": "Momento Engraçado",
+    "category": "Engraçados",
+    "year": "2026",
+    "quality": "MEME",
+    "rating": "10",
+    "isRelease": true,
+    "thumbnail": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80",
+    "videoUrl": "video2.mp4",
+    "description": "Maiara caindo na risada em casa!"
+  },
+  {
+    "id": 3,
+    "title": "Aniversário da Maiara",
+    "category": "Festas",
+    "year": "2025",
+    "quality": "ESPECIAL",
+    "rating": "10",
+    "isRelease": false,
+    "thumbnail": "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=80",
+    "videoUrl": "video3.mp4",
+    "description": "Festa de aniversário em família."
+  }
+]
