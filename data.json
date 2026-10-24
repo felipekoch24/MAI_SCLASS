@@ -10,5 +10,16 @@
     "thumbnail": "mai01.png",
     "videoUrl": "01.mp4",
     "description": "A Maiara de coração grande e maior STAY do mundo!"
+  },
+  {
+  "id": 2,
+  "title": "O Significado de Ter uma Irmã ❤️",
+  "description": "Não há nada neste mundo que eu não faria por você. Momentos inesquecíveis ao longo do tempo!",
+  "thumbnail": "mai02.png",
+  "videoUrl": "02.mp4",
+  "category": "Especiais",
+  "quality": "4K S-CLASS",
+  "year": "2026",
+  "isRelease": true
   }
 ]
