@@ -32,5 +32,27 @@
   "quality": "4K S-CLASS",
   "year": "2026",
   "isRelease": true
-}
+},
+  {
+    "id": 4,
+    "title": "A conversa que não participo ♟️😂",
+    "description": "Momentos hilários jogando xadrez e curtindo risadas juntos na nossa galeria VIP!",
+    "thumbnail": "mai04.png",
+    "videoUrl": "04.mp4",
+    "category": "Engraçados",
+    "quality": "4K S-CLASS",
+    "year": "2026",
+    "isRelease": true
+  },
+  {
+    "id": 5,
+    "title": "A pessoa mais incrível do mundo 💖",
+    "description": "Quando acham que sou uma pessoa ruim, mas a minha irmãzinha mais nova sempre me acha incrível!",
+    "thumbnail": "mai05.png",
+    "videoUrl": "05.mp4",
+    "category": "Família",
+    "quality": "4K S-CLASS",
+    "year": "2026",
+    "isRelease": false
+  }
 ]
