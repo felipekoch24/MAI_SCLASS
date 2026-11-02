@@ -105,8 +105,9 @@ function renderVideos() {
   const grid = document.getElementById('videoGrid');
   let filtered = [...videosData];
 
-  if (currentTab === 'lancamentos') {
-    filtered = filtered.filter(v => v.isRelease === true);
+    if (currentTab === 'lancamentos') {
+    // Pega todos os vídeos e ordena do maior ID para o menor (mais recentes primeiro)
+    filtered = [...videosData].sort((a, b) => b.id - a.id);
   } else if (currentTab === 'favoritos') {
     filtered = filtered.filter(v => favorites.includes(v.id));
   }
