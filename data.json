@@ -54,5 +54,45 @@
     "quality": "4K S-CLASS",
     "year": "2026",
     "isRelease": false
+  },
+  {
+    "id": 6,
+    "title": "Em Todos os Universos... 🌌💖",
+    "description": "Em todos os universos você seria minha irmãzinha! Te amo, tem uma parte gigante do meu coração. ✨",
+    "thumbnail": "06.png",
+    "videoUrl": "06.mp4",
+    "category": "Especiais",
+    "quality": "4K S-CLASS",
+    "year": "2026"
+  },
+  {
+    "id": 7,
+    "title": "Nossa Família & Memórias 📸🏠",
+    "description": "Momentos inesquecíveis juntinhos, cheios de carinho, sorrisos e muito amor em família! ❤️",
+    "thumbnail": "07.png",
+    "videoUrl": "07.mp4",
+    "category": "Família",
+    "quality": "4K S-CLASS",
+    "year": "2026"
+  },
+  {
+    "id": 8,
+    "title": "Crescendo Rápido Demais 🥺🫶",
+    "description": "Mostre alguém que está crescendo rápido demais... O tempo voa, mas o carinho só aumenta! 💕",
+    "thumbnail": "08.png",
+    "videoUrl": "08.mp4",
+    "category": "Especiais",
+    "quality": "4K S-CLASS",
+    "year": "2026"
+  },
+  {
+    "id": 9,
+    "title": "Diferentes Anos, Mesma Essência 🖼️✨",
+    "description": "Já pensou como seríamos em diferentes anos? Amizade, respeito, confiança e parceria para sempre! 🤍",
+    "thumbnail": "09.png",
+    "videoUrl": "09.mp4",
+    "category": "Especiais",
+    "quality": "4K S-CLASS",
+    "year": "2026"
   }
 ]
